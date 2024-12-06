@@ -24,27 +24,4 @@ internal static class TreeNodeExtensions
             foreach (var treeNode in GetChildren(child)) yield return treeNode;
         }
     }
-
-    public static IEnumerable<TreeNode> Flatten(this TreeNode value)
-    {
-        if (value == null) yield break;
-        // if (value.Childs == null || value.Childs.Count == 0) yield return value;
-        yield return value;
-        if (value.Childs == null) yield break;
-        foreach (var child in value.Childs)
-        {
-            foreach (var treeNode in Flatten(child)) yield return treeNode;
-        }
-    }
-
-    public static TreeNode Copy(this TreeNode value)
-    {
-        return new TreeNode
-        {
-            Id = value.Id,
-            ParentId = value.ParentId,
-            Name = value.Name,
-            Childs = new List<TreeNode>()
-        };
-    }
 }
