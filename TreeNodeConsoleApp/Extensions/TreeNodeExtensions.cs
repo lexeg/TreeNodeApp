@@ -13,15 +13,33 @@ internal static class TreeNodeExtensions
         }
     }
 
-    public static IEnumerable<TreeNode> GetChildren(this TreeNode value)
+    public static TreeNode[] GetChildren(this TreeNode value)
     {
         // todo: переделать на stack
-        if (value == null) yield break;
-        if (value.Childs == null || value.Childs.Count == 0) yield return value;
-        if (value.Childs == null) yield break;
-        foreach (var child in value.Childs)
+        if (value == null) return [];
+        if (value.Childs == null || value.Childs.Count == 0) return [value];
+        var visited = new HashSet<Guid>();
+        var items = new List<TreeNode>();
+        var stack = new Stack<TreeNode>();
+        stack.Push(value);
+        while (stack.Count != 0)
         {
-            foreach (var treeNode in GetChildren(child)) yield return treeNode;
+            var node = stack.Pop();
+            visited.Add(node.Id);
+            if (node.Childs.Count == 0)
+            {
+                items.Add(node);
+            }
+
+            foreach (var child in node.Childs.Reverse())
+            {
+                if (!visited.Contains(child.Id))
+                {
+                    stack.Push(child);
+                }
+            }
         }
+
+        return items.ToArray();
     }
 }

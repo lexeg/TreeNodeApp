@@ -12,7 +12,7 @@ class Program
 
         Console.WriteLine("Get children:");
         // var children = tree.GetChildren().Take(5).ToArray();
-        var children = tree.GetChildren().ToArray();
+        var children = tree.GetChildren();
         foreach (var child in children)
         {
             Console.WriteLine(child.Name);
