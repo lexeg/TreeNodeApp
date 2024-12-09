@@ -13,7 +13,7 @@ internal static class TreeNodeExtensions
         }
     }
 
-    public static TreeNode[] GetChildren(this TreeNode value)
+    public static TreeNode[] GetChildren(this TreeNode value, int? offset = null, int? limit = null)
     {
         // todo: переделать на stack
         if (value == null) return [];
@@ -21,6 +21,7 @@ internal static class TreeNodeExtensions
         var visited = new HashSet<Guid>();
         var items = new List<TreeNode>();
         var stack = new Stack<TreeNode>();
+        var skip = offset ?? 0;
         stack.Push(value);
         while (stack.Count != 0)
         {
@@ -28,6 +29,17 @@ internal static class TreeNodeExtensions
             visited.Add(node.Id);
             if (node.Childs.Count == 0)
             {
+                if (skip != 0)
+                {
+                    skip--;
+                    continue;
+                }
+
+                if (limit != null && items.Count >= limit)
+                {
+                    break;
+                }
+
                 items.Add(node);
             }
 

@@ -11,17 +11,17 @@ class Program
         Console.WriteLine();
 
         Console.WriteLine("Get children:");
-        // var children = tree.GetChildren().Take(5).ToArray();
-        var children = tree.GetChildren();
+        var children = tree.GetChildren(offset: 2, limit: 3).ToArray();
+        // var children = tree.GetChildren();
         foreach (var child in children)
         {
             Console.WriteLine(child.Name);
         }
 
-        var result1 = FindRootNode(children[2], tree);
-        var result2 = FindRootNode(children[5], tree);
-        var result3 = FindRootNode(children[6], tree);
-        var newTree = BuildTree(children, new []{tree});
+        // var result1 = FindRootNode(children[2], tree);
+        // var result2 = FindRootNode(children[5], tree);
+        // var result3 = FindRootNode(children[6], tree);
+        var newTree = BuildTree(children, new[] { tree });
         Console.WriteLine();
         Console.WriteLine("Result:");
         newTree.First().Print();
@@ -62,18 +62,19 @@ class Program
             if (key.HasValue)
             {
                 var root = FindRootNode(values.First(), sourceTree.First());
-                TreeNode last=root;
-                while (last.Childs.Count!=0)
+                TreeNode last = root;
+                while (last.Childs.Count != 0)
                 {
                     last = last.Childs.Last();
                 }
+
                 foreach (var node in values)
                 {
                     last.Childs.Add(node);
                 }
 
                 var findRoot = rootFict.Childs.FirstOrDefault(x => x.Id == root.Id);
-                if(findRoot!=null)
+                if (findRoot != null)
                 {
                     findRoot.Childs.Add(root.Childs.First());
                 }
@@ -102,6 +103,7 @@ class Program
             // copy.Childs.Add(treeNode);
             return copy;
         }
+
         foreach (var child in sourceTree.Childs)
         {
             var result = FindRootNode(treeNode, child);
@@ -116,7 +118,7 @@ class Program
 
         return null;
     }
-    
+
     private static TreeNode CopyTreeNode(TreeNode treeNode)
     {
         return new TreeNode
