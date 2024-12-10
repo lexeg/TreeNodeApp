@@ -17,7 +17,7 @@ internal static class TreeNodeExtensions
     {
         foreach (var value in values)
         {
-            value.Print();
+            value.Print(indent);
         }
     }
 
