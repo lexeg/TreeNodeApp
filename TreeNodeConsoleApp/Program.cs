@@ -6,13 +6,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        var tree = TreeNodeBuilder.CreateTree2();
+        var tree = TreeNodeBuilder.CreateBigTree2();
         tree.Print();
         Console.WriteLine();
 
         Console.WriteLine("Get children:");
-        // var children = tree.GetChildren(offset: 990, limit: 11).ToArray();
-        var children = tree.GetChildren(offset: 8, limit: 3).ToArray();
+        var children = tree.GetChildren(offset: 990, limit: 11).ToArray();
+        // var children = tree.GetChildren(offset: 8, limit: 3).ToArray();
         // var children = tree.GetChildren();
         foreach (var child in children)
         {
