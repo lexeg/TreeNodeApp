@@ -13,6 +13,14 @@ internal static class TreeNodeExtensions
         }
     }
 
+    public static void Print(this TreeNode[] values, int indent = 0)
+    {
+        foreach (var value in values)
+        {
+            value.Print();
+        }
+    }
+
     public static TreeNode[] GetChildren(this TreeNode value, int? offset = null, int? limit = null)
     {
         // todo: переделать на stack
@@ -52,6 +60,18 @@ internal static class TreeNodeExtensions
             }
         }
 
+        return items.ToArray();
+    }
+
+    public static TreeNode[] GetChildren(this TreeNode[] values, int? offset = null, int? limit = null)
+    {
+        var items = new List<TreeNode>();
+        var rootFict = new TreeNode { Id = Guid.Empty, Name = "Fict", ParentId = null, Childs = new List<TreeNode>(values) };
+        /*foreach (var value in values)
+        {
+            items.AddRange(value.GetChildren(offset, limit));
+        }*/
+        items.AddRange(rootFict.GetChildren(offset, limit));
         return items.ToArray();
     }
 }

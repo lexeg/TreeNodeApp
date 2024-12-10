@@ -6,12 +6,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        var tree = TreeNodeBuilder.CreateBigTree();
+        var tree = TreeNodeBuilder.CreateTree2();
         tree.Print();
         Console.WriteLine();
 
         Console.WriteLine("Get children:");
-        var children = tree.GetChildren(offset: 990, limit: 11).ToArray();
+        // var children = tree.GetChildren(offset: 990, limit: 11).ToArray();
+        var children = tree.GetChildren(offset: 8, limit: 3).ToArray();
         // var children = tree.GetChildren();
         foreach (var child in children)
         {
@@ -21,10 +22,10 @@ class Program
         // var result1 = FindRootNode(children[2], tree);
         // var result2 = FindRootNode(children[5], tree);
         // var result3 = FindRootNode(children[6], tree);
-        var newTree = BuildTree(children, new[] { tree });
+        var newTree = BuildTree(children, tree);
         Console.WriteLine();
         Console.WriteLine("Result:");
-        newTree.First().Print();
+        newTree.Print();
     }
 
     private static TreeNode[] BuildTree(TreeNode[] children, TreeNode[] sourceTree)
@@ -37,7 +38,7 @@ class Program
             var values = grouping.ToArray();
             if (key.HasValue)
             {
-                var root = FindRootNode(values.First(), sourceTree.First());
+                var root = FindRootNode(values.First(), sourceTree);
                 TreeNode last = root;
                 while (last.Childs.Count != 0)
                 {
@@ -69,6 +70,13 @@ class Program
         }
 
         return rootFict.Childs.ToArray();
+    }
+
+    private static TreeNode FindRootNode(TreeNode treeNode, TreeNode[] sourceTrees)
+    {
+        return sourceTrees
+            .Select(sourceTree => FindRootNode(treeNode, sourceTree))
+            .FirstOrDefault(root => root != null);
     }
 
     private static TreeNode FindRootNode(TreeNode treeNode, TreeNode sourceTree)
