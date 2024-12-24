@@ -74,10 +74,10 @@ class Program
                 var findRoot = rootFict.Childs.FirstOrDefault(x => x.Id == root.Id);
                 if (findRoot != null)
                 {
-                    var (t1, t2) = FindChildNode2(findRoot, root);
-                    foreach (var tt in t2)
+                    var (node, treeChildren) = FindChildPositionInTree(findRoot, root);
+                    foreach (var item in treeChildren)
                     {
-                        t1.Childs.Add(tt);
+                        node.Childs.Add(item);
                     }
                 }
                 else
@@ -97,18 +97,12 @@ class Program
         return rootFict.Childs.ToArray();
     }
 
-    private static (TreeNode t1, ICollection<TreeNode> t2) FindChildNode2(TreeNode findRoot, TreeNode root)
+    private static (TreeNode node, ICollection<TreeNode> children) FindChildPositionInTree(TreeNode tree,
+        TreeNode childNode)
     {
-        var nextNode = root.Childs.Last();
-        var node = findRoot.Childs.FirstOrDefault(x => x.Id == nextNode.Id);
-        if (node != null)
-        {
-            var r = FindChildNode2(node, nextNode);
-            return r;
-        }
-
-        // return (findRoot, nextNode);
-        return (findRoot, root.Childs);
+        var child = childNode.Childs.Last();
+        var node = tree.Childs.FirstOrDefault(x => x.Id == child.Id);
+        return node != null ? FindChildPositionInTree(node, child) : (tree, childNode.Childs);
     }
 
     private static TreeNode FindRootNode(TreeNode treeNode, TreeNode[] sourceTrees)
