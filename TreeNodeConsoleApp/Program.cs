@@ -6,7 +6,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        var tree = TreeNodeBuilder.CreateBigTree2();
+        FixBugCs24590(Path.Combine(Environment.CurrentDirectory, "Files", "cs24590.json"));
+        /*var tree = TreeNodeBuilder.CreateBigTree2();
         tree.Print();
         Console.WriteLine();
 
@@ -22,6 +23,26 @@ class Program
         // var result1 = FindRootNode(children[2], tree);
         // var result2 = FindRootNode(children[5], tree);
         // var result3 = FindRootNode(children[6], tree);
+        var newTree = BuildTree(children, tree);
+        Console.WriteLine();
+        Console.WriteLine("Result:");
+        newTree.Print();*/
+    }
+
+    private static void FixBugCs24590(string filePath)
+    {
+        var tree = JsonConverter.Deserialize(filePath);
+        tree.Print();
+        Console.WriteLine();
+        
+        Console.WriteLine("Get children:");
+        var children = tree.GetChildren().ToArray();
+        foreach (var child in children)
+        {
+            Console.WriteLine(child.Name);
+        }
+
+        // children = children.Skip(16).Take(14).ToArray();
         var newTree = BuildTree(children, tree);
         Console.WriteLine();
         Console.WriteLine("Result:");
@@ -53,7 +74,11 @@ class Program
                 var findRoot = rootFict.Childs.FirstOrDefault(x => x.Id == root.Id);
                 if (findRoot != null)
                 {
-                    findRoot.Childs.Add(root.Childs.First());
+                    var (t1, t2) = FindChildNode2(findRoot, root);
+                    foreach (var tt in t2)
+                    {
+                        t1.Childs.Add(tt);
+                    }
                 }
                 else
                 {
@@ -70,6 +95,20 @@ class Program
         }
 
         return rootFict.Childs.ToArray();
+    }
+
+    private static (TreeNode t1, ICollection<TreeNode> t2) FindChildNode2(TreeNode findRoot, TreeNode root)
+    {
+        var nextNode = root.Childs.Last();
+        var node = findRoot.Childs.FirstOrDefault(x => x.Id == nextNode.Id);
+        if (node != null)
+        {
+            var r = FindChildNode2(node, nextNode);
+            return r;
+        }
+
+        // return (findRoot, nextNode);
+        return (findRoot, root.Childs);
     }
 
     private static TreeNode FindRootNode(TreeNode treeNode, TreeNode[] sourceTrees)

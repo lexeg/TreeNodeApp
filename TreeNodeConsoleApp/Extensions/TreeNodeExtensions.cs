@@ -7,7 +7,7 @@ internal static class TreeNodeExtensions
     {
         Console.WriteLine($"{new string(Enumerable.Repeat(' ', indent).ToArray())}{value.Name}");
         var childIndent = indent + 2;
-        foreach (var child in value.Childs)
+        foreach (var child in value.Childs ?? [])
         {
             Print(child, childIndent);
         }
