@@ -7,7 +7,7 @@ internal static class TreeNodeExtensions
     {
         Console.WriteLine($"{new string(Enumerable.Repeat(' ', indent).ToArray())}{value.Name}");
         var childIndent = indent + 2;
-        foreach (var child in value.Childs ?? [])
+        foreach (var child in value.Children ?? [])
         {
             Print(child, childIndent);
         }
@@ -25,7 +25,7 @@ internal static class TreeNodeExtensions
     {
         // todo: переделать на stack
         if (value == null) return [];
-        if (value.Childs == null || value.Childs.Count == 0) return [value];
+        if (value.Children == null || value.Children.Count == 0) return [value];
         var visited = new HashSet<Guid>();
         var items = new List<TreeNode>();
         var stack = new Stack<TreeNode>();
@@ -35,7 +35,7 @@ internal static class TreeNodeExtensions
         {
             var node = stack.Pop();
             visited.Add(node.Id);
-            if (node.Childs.Count == 0)
+            if (node.Children.Count == 0)
             {
                 if (skip != 0)
                 {
@@ -51,7 +51,7 @@ internal static class TreeNodeExtensions
                 items.Add(node);
             }
 
-            foreach (var child in node.Childs.Reverse())
+            foreach (var child in node.Children.Reverse())
             {
                 if (!visited.Contains(child.Id))
                 {
@@ -66,7 +66,7 @@ internal static class TreeNodeExtensions
     public static TreeNode[] GetChildren(this TreeNode[] values, int? offset = null, int? limit = null)
     {
         var items = new List<TreeNode>();
-        var rootFict = new TreeNode { Id = Guid.Empty, Name = "Fict", ParentId = null, Childs = new List<TreeNode>(values) };
+        var rootFict = new TreeNode { Id = Guid.Empty, Name = "Fict", ParentId = null, Children = new List<TreeNode>(values) };
         /*foreach (var value in values)
         {
             items.AddRange(value.GetChildren(offset, limit));

@@ -51,7 +51,7 @@ class Program
 
     private static TreeNode[] BuildTree(TreeNode[] children, TreeNode[] sourceTree)
     {
-        var rootFict = new TreeNode { Id = Guid.Empty, Name = "Fict", ParentId = null, Childs = new List<TreeNode>() };
+        var rootFict = new TreeNode { Id = Guid.Empty, Name = "Fict", ParentId = null, Children = new List<TreeNode>() };
         var grouped = children.GroupBy(x => x.ParentId).ToArray();
         foreach (var grouping in grouped)
         {
@@ -61,48 +61,48 @@ class Program
             {
                 var root = FindRootNode(values.First(), sourceTree);
                 TreeNode last = root;
-                while (last.Childs.Count != 0)
+                while (last.Children.Count != 0)
                 {
-                    last = last.Childs.Last();
+                    last = last.Children.Last();
                 }
 
                 foreach (var node in values)
                 {
-                    last.Childs.Add(node);
+                    last.Children.Add(node);
                 }
 
-                var findRoot = rootFict.Childs.FirstOrDefault(x => x.Id == root.Id);
+                var findRoot = rootFict.Children.FirstOrDefault(x => x.Id == root.Id);
                 if (findRoot != null)
                 {
                     var (node, treeChildren) = FindChildPositionInTree(findRoot, root);
                     foreach (var item in treeChildren)
                     {
-                        node.Childs.Add(item);
+                        node.Children.Add(item);
                     }
                 }
                 else
                 {
-                    rootFict.Childs.Add(root);
+                    rootFict.Children.Add(root);
                 }
             }
             else
             {
                 foreach (var node in values)
                 {
-                    rootFict.Childs.Add(node);
+                    rootFict.Children.Add(node);
                 }
             }
         }
 
-        return rootFict.Childs.ToArray();
+        return rootFict.Children.ToArray();
     }
 
     private static (TreeNode node, ICollection<TreeNode> children) FindChildPositionInTree(TreeNode tree,
         TreeNode childNode)
     {
-        var child = childNode.Childs.Last();
-        var node = tree.Childs.FirstOrDefault(x => x.Id == child.Id);
-        return node != null ? FindChildPositionInTree(node, child) : (tree, childNode.Childs);
+        var child = childNode.Children.Last();
+        var node = tree.Children.FirstOrDefault(x => x.Id == child.Id);
+        return node != null ? FindChildPositionInTree(node, child) : (tree, Childs: childNode.Children);
     }
 
     private static TreeNode FindRootNode(TreeNode treeNode, TreeNode[] sourceTrees)
@@ -121,14 +121,14 @@ class Program
             return copy;
         }
 
-        foreach (var child in sourceTree.Childs)
+        foreach (var child in sourceTree.Children)
         {
             var result = FindRootNode(treeNode, child);
             if (result != null)
             {
                 var copy = CopyTreeNode(sourceTree);
                 // copy.Childs.Add(treeNode); // специально закомментировал
-                copy.Childs.Add(result);
+                copy.Children.Add(result);
                 return copy;
             }
         }
@@ -143,7 +143,7 @@ class Program
             Id = treeNode.Id,
             ParentId = treeNode.ParentId,
             Name = treeNode.Name,
-            Childs = new List<TreeNode>()
+            Children = new List<TreeNode>()
         };
     }
 }
