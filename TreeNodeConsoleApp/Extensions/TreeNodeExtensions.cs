@@ -23,9 +23,8 @@ internal static class TreeNodeExtensions
 
     public static TreeNode[] GetChildren(this TreeNode value, int? offset = null, int? limit = null)
     {
-        // todo: переделать на stack
         if (value == null) return [];
-        if (value.Children == null || value.Children.Count == 0) return [value];
+        if (value.Children == null || value.Children.Length == 0) return [value];
         var visited = new HashSet<Guid>();
         var items = new List<TreeNode>();
         var stack = new Stack<TreeNode>();
@@ -35,7 +34,7 @@ internal static class TreeNodeExtensions
         {
             var node = stack.Pop();
             visited.Add(node.Id);
-            if (node.Children.Count == 0)
+            if (node.Children.Length == 0)
             {
                 if (skip != 0)
                 {
@@ -66,12 +65,9 @@ internal static class TreeNodeExtensions
     public static TreeNode[] GetChildren(this TreeNode[] values, int? offset = null, int? limit = null)
     {
         var items = new List<TreeNode>();
-        var rootFict = new TreeNode { Id = Guid.Empty, Name = "Fict", ParentId = null, Children = new List<TreeNode>(values) };
-        /*foreach (var value in values)
-        {
-            items.AddRange(value.GetChildren(offset, limit));
-        }*/
-        items.AddRange(rootFict.GetChildren(offset, limit));
+        var fictiveRoot = new TreeNode
+            { Id = Guid.Empty, Name = "Fictive root", ParentId = null, Children = values };
+        items.AddRange(fictiveRoot.GetChildren(offset, limit));
         return items.ToArray();
     }
 }

@@ -8,5 +8,6 @@ public class TreeNode
     public Guid? ParentId { get; set; }
     public string Name { get; set; }
     [JsonProperty("children")]
-    public ICollection<TreeNode> Children { get; set; }
+    // public ICollection<TreeNode> Children { get; set; }
+    public TreeNode[] Children { get; set; }
 }

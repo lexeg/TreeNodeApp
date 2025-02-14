@@ -49,60 +49,67 @@ class Program
         newTree.Print();
     }
 
-    private static TreeNode[] BuildTree(TreeNode[] children, TreeNode[] sourceTree)
+    private static TreeNode[] BuildTree(TreeNode[] departments, TreeNode[] sourceTree)
     {
-        var rootFict = new TreeNode { Id = Guid.Empty, Name = "Fict", ParentId = null, Children = new List<TreeNode>() };
-        var grouped = children.GroupBy(x => x.ParentId).ToArray();
-        foreach (var grouping in grouped)
+        var children = new List<TreeNode>();
+        foreach (var grouping in departments.GroupBy(x => x.ParentId))
         {
             var key = grouping.Key;
             var values = grouping.ToArray();
             if (key.HasValue)
             {
                 var root = FindRootNode(values.First(), sourceTree);
-                TreeNode last = root;
-                while (last.Children.Count != 0)
+                var last = root;
+                while (last.Children.Length != 0)
                 {
                     last = last.Children.Last();
                 }
 
-                foreach (var node in values)
+                /*foreach (var node in values)
                 {
                     last.Children.Add(node);
-                }
+                }*/
+                var childrenItems = new List<TreeNode>(last.Children);
+                childrenItems.AddRange(values);
+                last.Children = childrenItems.ToArray();
 
-                var findRoot = rootFict.Children.FirstOrDefault(x => x.Id == root.Id);
+                var findRoot = children.FirstOrDefault(x => x.Id == root.Id);
                 if (findRoot != null)
                 {
                     var (node, treeChildren) = FindChildPositionInTree(findRoot, root);
-                    foreach (var item in treeChildren)
+                    findRoot.Children = node.Children.Concat(treeChildren).ToArray();
+                    /*foreach (var item in treeChildren)
                     {
                         node.Children.Add(item);
-                    }
+                    }*/
                 }
                 else
                 {
-                    rootFict.Children.Add(root);
+                    // rootFict.Children.Add(root);
+                    children.Add(root);
                 }
             }
             else
             {
-                foreach (var node in values)
+                /*foreach (var node in values)
                 {
                     rootFict.Children.Add(node);
-                }
+                }*/
+                children.AddRange(values);
             }
         }
 
-        return rootFict.Children.ToArray();
+        return children.ToArray();
     }
 
-    private static (TreeNode node, ICollection<TreeNode> children) FindChildPositionInTree(TreeNode tree,
-        TreeNode childNode)
+    private static (TreeNode department, ICollection<TreeNode> children) FindChildPositionInTree(TreeNode tree,
+        TreeNode childDepartment)
     {
-        var child = childNode.Children.Last();
+        var child = childDepartment.Children.Last();
         var node = tree.Children.FirstOrDefault(x => x.Id == child.Id);
-        return node != null ? FindChildPositionInTree(node, child) : (tree, Childs: childNode.Children);
+        return node != null
+            ? FindChildPositionInTree(node, child)
+            : (department: tree, children: childDepartment.Children);
     }
 
     private static TreeNode FindRootNode(TreeNode treeNode, TreeNode[] sourceTrees)
@@ -116,9 +123,7 @@ class Program
     {
         if (sourceTree.Id == treeNode.ParentId)
         {
-            var copy = CopyTreeNode(sourceTree);
-            // copy.Childs.Add(treeNode);
-            return copy;
+            return CloneDepartment(sourceTree);
         }
 
         foreach (var child in sourceTree.Children)
@@ -126,24 +131,19 @@ class Program
             var result = FindRootNode(treeNode, child);
             if (result != null)
             {
-                var copy = CopyTreeNode(sourceTree);
-                // copy.Childs.Add(treeNode); // специально закомментировал
-                copy.Children.Add(result);
-                return copy;
+                return CloneDepartment(sourceTree, [result]);
             }
         }
 
         return null;
     }
 
-    private static TreeNode CopyTreeNode(TreeNode treeNode)
-    {
-        return new TreeNode
+    private static TreeNode CloneDepartment(TreeNode departmentWithChildren, TreeNode[] children = null) =>
+        new()
         {
-            Id = treeNode.Id,
-            ParentId = treeNode.ParentId,
-            Name = treeNode.Name,
-            Children = new List<TreeNode>()
+            Id = departmentWithChildren.Id,
+            ParentId = departmentWithChildren.ParentId,
+            Name = departmentWithChildren.Name,
+            Children = children ?? []
         };
-    }
 }
