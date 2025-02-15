@@ -1,0 +1,102 @@
+[
+  {
+    "id": "b2fc80d7-bdf9-4941-8290-2d7971a46bf6",
+    "parentId": null,
+    "name": "ДРВ",
+    "description": "ДПА",
+    "children": [
+      {
+        "id": "685d6228-c9c5-4d93-b5dd-510cebdec7f4",
+        "parentId": "b2fc80d7-bdf9-4941-8290-2d7971a46bf6",
+        "name": "ДФУ УДУ",
+        "description": null,
+        "children": [
+          {
+            "id": "ef0aaf92-556f-431c-a543-0df6a6d5307d",
+            "parentId": "685d6228-c9c5-4d93-b5dd-510cebdec7f4",
+            "name": "ДФУ УДУ ЦДУ Самара",
+            "description": null,
+            "children": [
+              {
+                "id": "c966689a-72e1-4776-baf0-3b90fd855ced",
+                "parentId": "ef0aaf92-556f-431c-a543-0df6a6d5307d",
+                "name": "ГДОИР Самара",
+                "description": null,
+                "children": [],
+                "status": "Active",
+                "operatorsCount": null,
+                "totalOperatorsCount": null,
+                "supervisors": null,
+                "departmentHead": null
+              },
+              {
+                "id": "9afd3e98-2780-418c-a519-7315218eebd7",
+                "parentId": "ef0aaf92-556f-431c-a543-0df6a6d5307d",
+                "name": "ГСОКК Самара",
+                "description": null,
+                "children": [],
+                "status": "Active",
+                "operatorsCount": null,
+                "totalOperatorsCount": null,
+                "supervisors": null,
+                "departmentHead": null
+              },
+              {
+                "id": "000bfafb-016e-4725-9545-43197dd79253",
+                "parentId": "ef0aaf92-556f-431c-a543-0df6a6d5307d",
+                "name": "ОДУРА Самара",
+                "description": null,
+                "children": [
+                  {
+                    "id": "64acc762-a8a0-4e6f-81f5-ac3db3af0d74",
+                    "parentId": "000bfafb-016e-4725-9545-43197dd79253",
+                    "name": "1 ГДУ (1-30) ОДУРА (Самара)",
+                    "description": null,
+                    "children": [],
+                    "status": "Active",
+                    "operatorsCount": null,
+                    "totalOperatorsCount": null,
+                    "supervisors": null,
+                    "departmentHead": null
+                  },
+                  {
+                    "id": "f613ed4f-7327-4fc4-8780-65813894ef7a",
+                    "parentId": "000bfafb-016e-4725-9545-43197dd79253",
+                    "name": "2 ГДУ (1-30) ОДУРА (Самара)",
+                    "description": null,
+                    "children": [],
+                    "status": "Active",
+                    "operatorsCount": null,
+                    "totalOperatorsCount": null,
+                    "supervisors": null,
+                    "departmentHead": null
+                  }
+                ],
+                "status": "Active",
+                "operatorsCount": null,
+                "totalOperatorsCount": null,
+                "supervisors": null,
+                "departmentHead": null
+              }
+            ],
+            "status": "Active",
+            "operatorsCount": null,
+            "totalOperatorsCount": null,
+            "supervisors": null,
+            "departmentHead": null
+          }
+        ],
+        "status": "Active",
+        "operatorsCount": null,
+        "totalOperatorsCount": null,
+        "supervisors": null,
+        "departmentHead": null
+      }
+    ],
+    "status": "Active",
+    "operatorsCount": null,
+    "totalOperatorsCount": null,
+    "supervisors": null,
+    "departmentHead": null
+  }
+]
