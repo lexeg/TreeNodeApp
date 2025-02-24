@@ -1,0 +1,63 @@
+﻿{
+    "Id": "f85d190b-7e6c-4ac0-b2a4-e8a864776642",
+    "ParentId": null,
+    "Name": "Подразделение 1",
+    "children": [
+        {
+            "Id": "e73ddd71-44d2-430c-a45e-cd1be335f9ce",
+            "ParentId": "f85d190b-7e6c-4ac0-b2a4-e8a864776642",
+            "Name": "Подразделение 1.1",
+            "children": [
+                {
+                    "Id": "67e5bff4-ce7a-4caa-a685-792f31fc63df",
+                    "ParentId": "e73ddd71-44d2-430c-a45e-cd1be335f9ce",
+                    "Name": "Подразделение 1.1.1",
+                    "children": []
+                },
+                {
+                    "Id": "a3eff179-ead2-494a-9cd3-f284614ee7eb",
+                    "ParentId": "e73ddd71-44d2-430c-a45e-cd1be335f9ce",
+                    "Name": "Подразделение 1.1.2",
+                    "children": []
+                },
+                {
+                    "Id": "0195bc34-d6f3-4183-8987-780593831965",
+                    "ParentId": "e73ddd71-44d2-430c-a45e-cd1be335f9ce",
+                    "Name": "Подразделение 1.1.3",
+                    "children": []
+                },
+                {
+                    "Id": "899eaa8f-f2ed-44f0-be8f-0c0e647a2fb1",
+                    "ParentId": "e73ddd71-44d2-430c-a45e-cd1be335f9ce",
+                    "Name": "Подразделение 1.1.4",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "Id": "e78f0cf3-9cee-4195-8d36-810b11ea5119",
+            "ParentId": "f85d190b-7e6c-4ac0-b2a4-e8a864776642",
+            "Name": "Подразделение 1.2",
+            "children": [
+                {
+                    "Id": "01aa4113-a169-41ae-9076-cc324e4fe48a",
+                    "ParentId": "e78f0cf3-9cee-4195-8d36-810b11ea5119",
+                    "Name": "Подразделение 1.2.1",
+                    "children": []
+                },
+                {
+                    "Id": "30985e85-f630-45f1-95ad-989150ea9c57",
+                    "ParentId": "e78f0cf3-9cee-4195-8d36-810b11ea5119",
+                    "Name": "Подразделение 1.2.2",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "Id": "4c647a72-91e4-483c-9362-a01aaad15ffa",
+            "ParentId": "f85d190b-7e6c-4ac0-b2a4-e8a864776642",
+            "Name": "Подразделение 1.3",
+            "children": []
+        }
+    ]
+}
