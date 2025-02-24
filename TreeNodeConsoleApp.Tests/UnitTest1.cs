@@ -82,6 +82,36 @@ public class Tests
         Approvals.VerifyJson(res);
     }
 
+    [Test]
+    public void TestCreateBigTree()
+    {
+        var rootGuids = new[]
+        {
+            Guid.Parse("a84ead7c-ff90-45f6-8f71-5f49c2c0167e"),
+            Guid.Parse("15f8b8f9-2c2f-4647-b90f-f9d552ecf36b"),
+            Guid.Parse("ce7263bb-8318-40b6-bacc-f0292e648da1"),
+            Guid.Parse("33b62d51-2a13-4907-bd76-7f4a7750007d")
+        };
+
+        var roots = new List<TreeNode>();
+        var startGuid = Guid.Empty;
+        for (var i = 0; i < rootGuids.Length; i++)
+        {
+            var childrenGuids = GenerateChildrenGuids(ref startGuid, 3);
+            var departmentNamePart = $"Подразделение {i + 1}";
+            var root = CreateRootTree(departmentNamePart, childrenGuids, rootGuids[i]);
+            root.Children[0].Children = CreateChildrenTreeNodes($"{departmentNamePart}.1",
+                GenerateChildrenGuids(ref startGuid, 1000), root.Children[0].Id);
+            root.Children[1].Children = CreateChildrenTreeNodes($"{departmentNamePart}.2",
+                GenerateChildrenGuids(ref startGuid, 2), root.Children[1].Id);
+            roots.Add(root);
+        }
+
+        var tree = roots;
+        var res = Newtonsoft.Json.JsonConvert.SerializeObject(tree);
+        Approvals.VerifyJson(res);
+    }
+
     private static Guid[] GenerateChildrenGuids(ref Guid startGuid, int count)
     {
         var items = new List<Guid>();
@@ -103,7 +133,6 @@ public class Tests
 
     private static TreeNode CreateRootTree(string departmentNamePart, Guid[] childrenGuids, Guid rootGuid)
     {
-        
         var root = new TreeNode { Id = rootGuid, Name = departmentNamePart, Children = [] };
         root.Children = childrenGuids
             .Select((_, i) => CreateChild(childrenGuids[i], $"{departmentNamePart}.{i + 1}", root.Id))
