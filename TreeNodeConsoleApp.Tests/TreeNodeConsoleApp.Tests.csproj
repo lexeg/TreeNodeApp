@@ -29,6 +29,9 @@
         <ParentFile>Tests</ParentFile>
         <DependentUpon>Tests.cs</DependentUpon>
       </None>
+      <None Update="Files\cs24590.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

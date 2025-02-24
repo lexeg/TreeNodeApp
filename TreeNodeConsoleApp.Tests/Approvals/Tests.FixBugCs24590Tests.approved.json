@@ -1,0 +1,511 @@
+﻿[
+    {
+        "Id": "8778cf60-b5bb-ef11-af1f-bc97e15ec345",
+        "ParentId": null,
+        "Name": "Audiotele_DKCB",
+        "children": []
+    },
+    {
+        "Id": "179f7a26-db57-4af7-ac59-2929879adf53",
+        "ParentId": null,
+        "Name": "NSK",
+        "children": []
+    },
+    {
+        "Id": "83141356-62a3-ef11-af1f-bc97e15ec345",
+        "ParentId": null,
+        "Name": "Service Desk",
+        "children": []
+    },
+    {
+        "Id": "d3ffe9f1-76d0-4e13-9ecf-34c763f3afbc",
+        "ParentId": null,
+        "Name": "Voxys",
+        "children": []
+    },
+    {
+        "Id": "dfb73bf6-2c3d-4757-92da-246d92c9554a",
+        "ParentId": null,
+        "Name": "ВК_808",
+        "children": []
+    },
+    {
+        "Id": "d62b792e-e38a-ef11-af1f-bc97e15ec345",
+        "ParentId": null,
+        "Name": "ВТБ small",
+        "children": []
+    },
+    {
+        "Id": "470a15dd-8d31-4106-b1f8-7d4a5e7eb53d",
+        "ParentId": null,
+        "Name": "ГосОборонЗаказ",
+        "children": []
+    },
+    {
+        "Id": "b25c1f0f-9332-413b-9d10-7a4359dcc306",
+        "ParentId": null,
+        "Name": "ГПК ДБО",
+        "children": []
+    },
+    {
+        "Id": "5cb45b8e-95c8-4cd5-88b2-481a716c401a",
+        "ParentId": null,
+        "Name": "Департамент сбережений и зачислений",
+        "children": []
+    },
+    {
+        "Id": "b2e5b615-6b23-4b33-a2a6-3572164293d1",
+        "ParentId": null,
+        "Name": "ДОПБ УРТЭ VTB-kassa",
+        "children": []
+    },
+    {
+        "Id": "84141356-62a3-ef11-af1f-bc97e15ec345",
+        "ParentId": null,
+        "Name": "ДППСИС",
+        "children": []
+    },
+    {
+        "Id": "280563b8-7ed1-47f3-88f3-50a520ce7919",
+        "ParentId": null,
+        "Name": "ДРОК",
+        "children": []
+    },
+    {
+        "Id": "61d756f8-8431-4c80-983c-425e811f2d50",
+        "ParentId": null,
+        "Name": "ИТ сотрудники, сопровождение",
+        "children": []
+    },
+    {
+        "Id": "0414676b-e5a2-4248-9416-2bee2805a3f5",
+        "ParentId": null,
+        "Name": "Кассовый центр СПБ",
+        "children": []
+    },
+    {
+        "Id": "13a112d3-b591-4459-a75d-baecd905ab83",
+        "ParentId": null,
+        "Name": "Методологическая поддержка сети",
+        "children": []
+    },
+    {
+        "Id": "1ccd1549-0174-419a-bb32-79f572023916",
+        "ParentId": null,
+        "Name": "ОВК Хабаровск",
+        "children": []
+    },
+    {
+        "Id": "175c7c95-4c97-49a9-8800-3f1ed18fb47d",
+        "ParentId": null,
+        "Name": "ОПК_911",
+        "children": []
+    },
+    {
+        "Id": "47a9cc8d-f774-4c8d-8301-e097a623deea",
+        "ParentId": null,
+        "Name": "ОРКЦ УУИТК ДРИ",
+        "children": []
+    },
+    {
+        "Id": "6215d542-28c1-4753-ab55-dd2533766d07",
+        "ParentId": null,
+        "Name": "ОСТС МБанк",
+        "children": []
+    },
+    {
+        "Id": "4931faf6-61a3-ef11-af1f-bc97e15ec345",
+        "ParentId": null,
+        "Name": "Самара",
+        "children": []
+    },
+    {
+        "Id": "2729272c-9675-4c32-aa12-ec8dacdadf79",
+        "ParentId": null,
+        "Name": "Сопровождение военных пенсионеров",
+        "children": []
+    },
+    {
+        "Id": "56440221-1a0c-4fec-b2c1-30673d32c6d3",
+        "ParentId": null,
+        "Name": "ССК ВТБ",
+        "children": []
+    },
+    {
+        "Id": "6484e3b9-2a2b-eb11-8133-005056830b7c",
+        "ParentId": null,
+        "Name": "Телеконтакт",
+        "children": []
+    },
+    {
+        "Id": "90c3c8c9-362b-448a-9868-677e3223b25e",
+        "ParentId": null,
+        "Name": "Тестирование ВО",
+        "children": []
+    },
+    {
+        "Id": "abb6ad42-78b9-e711-812d-005056830b7c",
+        "ParentId": null,
+        "Name": "Тестировщики",
+        "children": []
+    },
+    {
+        "Id": "338244b0-4a5e-461e-8275-b409825cd6e0",
+        "ParentId": null,
+        "Name": "Тестовая группа",
+        "children": []
+    },
+    {
+        "Id": "808044d2-1feb-4955-81fb-5a23ca38a949",
+        "ParentId": null,
+        "Name": "УЗКИ",
+        "children": []
+    },
+    {
+        "Id": "37292041-749b-4541-a7d2-93039183739a",
+        "ParentId": null,
+        "Name": "УОБРБ",
+        "children": []
+    },
+    {
+        "Id": "42810aa7-1328-42d4-990e-7788a0d5440a",
+        "ParentId": null,
+        "Name": "УППКБ",
+        "children": []
+    },
+    {
+        "Id": "4a31faf6-61a3-ef11-af1f-bc97e15ec345",
+        "ParentId": null,
+        "Name": "Чебоксары",
+        "children": []
+    },
+    {
+        "Id": "40d1ccf2-2c1a-4ea0-acfd-a8460ef7835b",
+        "ParentId": null,
+        "Name": "ДБО",
+        "children": [
+            {
+                "Id": "3e5fd3ef-771b-4611-98e4-45cf1c3c472b",
+                "ParentId": "40d1ccf2-2c1a-4ea0-acfd-a8460ef7835b",
+                "Name": "Support",
+                "children": []
+            },
+            {
+                "Id": "9383930b-4524-4add-9ce9-197cdcc2daa4",
+                "ParentId": "40d1ccf2-2c1a-4ea0-acfd-a8460ef7835b",
+                "Name": "ОАРИО",
+                "children": []
+            },
+            {
+                "Id": "2d66ed45-162f-480f-bf6c-8f6ed11260c0",
+                "ParentId": "40d1ccf2-2c1a-4ea0-acfd-a8460ef7835b",
+                "Name": "ОТПКО",
+                "children": []
+            },
+            {
+                "Id": "836f9484-c768-4085-b0cb-ac4d834674aa",
+                "ParentId": "40d1ccf2-2c1a-4ea0-acfd-a8460ef7835b",
+                "Name": "УКП ДБО",
+                "children": []
+            },
+            {
+                "Id": "54818a4a-b9fb-4b57-8956-f19b71b125cb",
+                "ParentId": "40d1ccf2-2c1a-4ea0-acfd-a8460ef7835b",
+                "Name": "УТО",
+                "children": []
+            },
+            {
+                "Id": "25e6a0d4-2f52-4666-8613-eb3ec1734aac",
+                "ParentId": "40d1ccf2-2c1a-4ea0-acfd-a8460ef7835b",
+                "Name": "ФОРЕКС",
+                "children": []
+            }
+        ]
+    },
+    {
+        "Id": "83e9d59c-62e8-4965-adb5-45fbc9684c36",
+        "ParentId": null,
+        "Name": "Департамент Клиентского Обслуживания",
+        "children": [
+            {
+                "Id": "286222fa-64a5-4609-aa25-adc1f7d1e67e",
+                "ParentId": "6d157e4f-e46f-41bf-a27e-0146f61e3a48",
+                "Name": "8000 КЦ Ульяновск",
+                "children": [
+                    {
+                        "Id": "dc7ded0c-a8f7-464f-86da-313949f52123",
+                        "ParentId": "286222fa-64a5-4609-aa25-adc1f7d1e67e",
+                        "Name": "8900 Отдел информационного обслуживания и продаж",
+                        "children": [
+                            {
+                                "Id": "883740bd-6973-4f23-9300-c84dda6e8090",
+                                "ParentId": "dc7ded0c-a8f7-464f-86da-313949f52123",
+                                "Name": "8901 УЛН ГРСиП 1",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "4805870e-5b00-4566-80a2-c4719c79bc36",
+                "ParentId": "6d157e4f-e46f-41bf-a27e-0146f61e3a48",
+                "Name": "9000 Управление поддержки и развития региональных центров",
+                "children": [
+                    {
+                        "Id": "09336806-9191-4c47-96e0-37887a1e762a",
+                        "ParentId": "4805870e-5b00-4566-80a2-c4719c79bc36",
+                        "Name": "Отдел контроля качества",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Id": "809ed9fd-bedf-4a86-944d-910daaad9755",
+        "ParentId": null,
+        "Name": "Департамент Корпоративного Цифрового Бизнеса (ДКЦБ)",
+        "children": [
+            {
+                "Id": "e8ee8805-c4b7-448d-b589-d98bda58440d",
+                "ParentId": "809ed9fd-bedf-4a86-944d-910daaad9755",
+                "Name": "Audiotele_DKCB",
+                "children": []
+            },
+            {
+                "Id": "6c27e184-9da7-4c1d-9b29-f217c5f4eb71",
+                "ParentId": "809ed9fd-bedf-4a86-944d-910daaad9755",
+                "Name": "Координаторы Выездного Сервиса",
+                "children": []
+            }
+        ]
+    },
+    {
+        "Id": "b2fc80d7-bdf9-4941-8290-2d7971a46bf6",
+        "ParentId": null,
+        "Name": "ДРВ",
+        "children": [
+            {
+                "Id": "97460064-1c08-4728-8a44-85ffe4ade6aa",
+                "ParentId": "6372571c-a385-4413-bbe9-49a0994d8188",
+                "Name": "3 ОУРА",
+                "children": [
+                    {
+                        "Id": "20245500-3a99-4af6-9e04-5999bd330a6e",
+                        "ParentId": "97460064-1c08-4728-8a44-85ffe4ade6aa",
+                        "Name": "1 ГУ 3 ОУРА",
+                        "children": []
+                    },
+                    {
+                        "Id": "68f2371b-6b63-4fa3-bf00-3cff673d617a",
+                        "ParentId": "97460064-1c08-4728-8a44-85ffe4ade6aa",
+                        "Name": "2 ГУ 3 ОУРА",
+                        "children": []
+                    },
+                    {
+                        "Id": "0d8faf86-d7e5-413f-b11c-16824ea9b928",
+                        "ParentId": "97460064-1c08-4728-8a44-85ffe4ade6aa",
+                        "Name": "3 ГУ 3 ОУРА",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "Id": "c209c82b-7405-4a3e-a03d-fff1538dcf05",
+                "ParentId": "6372571c-a385-4413-bbe9-49a0994d8188",
+                "Name": "ГИП-2",
+                "children": []
+            },
+            {
+                "Id": "427fadbe-d55f-4369-baa7-47b3e7a875c2",
+                "ParentId": "6372571c-a385-4413-bbe9-49a0994d8188",
+                "Name": "Отдел по взысканию автокредитов",
+                "children": []
+            },
+            {
+                "Id": "c146e528-9509-4dad-bc34-4de2f7f65b49",
+                "ParentId": "6372571c-a385-4413-bbe9-49a0994d8188",
+                "Name": "Отдел по взысканию розничных активов в МО",
+                "children": []
+            },
+            {
+                "Id": "658761fe-dc9c-4a37-baed-850b289d8109",
+                "ParentId": "6372571c-a385-4413-bbe9-49a0994d8188",
+                "Name": "ОУИА",
+                "children": []
+            },
+            {
+                "Id": "de46ce74-d7c0-4983-a608-116803dbf64f",
+                "ParentId": "6372571c-a385-4413-bbe9-49a0994d8188",
+                "Name": "ОУНА",
+                "children": []
+            }
+        ]
+    },
+    {
+        "Id": "90e009cc-72e7-4076-9fcd-6c031bf7572d",
+        "ParentId": null,
+        "Name": "УАРБ ДА",
+        "children": [
+            {
+                "Id": "2a00b56c-8e4e-4824-a75a-3be50fc61bf7",
+                "ParentId": "90e009cc-72e7-4076-9fcd-6c031bf7572d",
+                "Name": "ДА регионы",
+                "children": []
+            },
+            {
+                "Id": "0ae5d1ff-48ae-4b13-ad71-53b65b4f8549",
+                "ParentId": "90e009cc-72e7-4076-9fcd-6c031bf7572d",
+                "Name": "ДА Саратов",
+                "children": []
+            },
+            {
+                "Id": "3d4c1d25-ea79-4653-abd2-50481627e206",
+                "ParentId": "90e009cc-72e7-4076-9fcd-6c031bf7572d",
+                "Name": "ОПВП ГО",
+                "children": []
+            },
+            {
+                "Id": "01ac8e0c-88e3-45e4-ba72-bd341b4220d8",
+                "ParentId": "90e009cc-72e7-4076-9fcd-6c031bf7572d",
+                "Name": "ОПЗ Новосибирск",
+                "children": []
+            },
+            {
+                "Id": "197c30ea-ec81-48ae-8f26-79db350d5b61",
+                "ParentId": "90e009cc-72e7-4076-9fcd-6c031bf7572d",
+                "Name": "ОПЗ Хабаровск",
+                "children": []
+            },
+            {
+                "Id": "f19c5a65-c5b6-496a-97c9-36bee3563e11",
+                "ParentId": "90e009cc-72e7-4076-9fcd-6c031bf7572d",
+                "Name": "ОПЗ Чебоксары",
+                "children": []
+            },
+            {
+                "Id": "dc266c44-65e3-4e8a-ad52-b8463bee0cfa",
+                "ParentId": "90e009cc-72e7-4076-9fcd-6c031bf7572d",
+                "Name": "ОПФЛ ГО",
+                "children": []
+            },
+            {
+                "Id": "978b41b9-c003-416c-9747-ec133abe9303",
+                "ParentId": "90e009cc-72e7-4076-9fcd-6c031bf7572d",
+                "Name": "ОПЮЛ ГО",
+                "children": []
+            },
+            {
+                "Id": "34c1da70-13a3-4928-87b4-a53f2c4df5ea",
+                "ParentId": "90e009cc-72e7-4076-9fcd-6c031bf7572d",
+                "Name": "центр фрод-мониторинга",
+                "children": []
+            }
+        ]
+    },
+    {
+        "Id": "3e2fbaec-6c4f-43c4-8fd8-c11184070d36",
+        "ParentId": null,
+        "Name": "УППМ ДБИТ",
+        "children": [
+            {
+                "Id": "daf1fc8b-4fcd-49b3-9221-ffbccb96b6d6",
+                "ParentId": "3e2fbaec-6c4f-43c4-8fd8-c11184070d36",
+                "Name": "Иркутск",
+                "children": []
+            },
+            {
+                "Id": "67ca66b7-a508-445b-b2fa-25bc80ea297b",
+                "ParentId": "3e2fbaec-6c4f-43c4-8fd8-c11184070d36",
+                "Name": "ОДиКК",
+                "children": []
+            },
+            {
+                "Id": "1954cc3a-b043-4a05-9aa5-6e7f4e0ab50c",
+                "ParentId": "3e2fbaec-6c4f-43c4-8fd8-c11184070d36",
+                "Name": "ОМИС",
+                "children": []
+            },
+            {
+                "Id": "9d5bf19b-3a35-40b6-9d70-51da847e696d",
+                "ParentId": "3e2fbaec-6c4f-43c4-8fd8-c11184070d36",
+                "Name": "ООПФЛ",
+                "children": []
+            },
+            {
+                "Id": "ae5e075c-5d2c-4b0b-b28d-6d4d40cfc7cc",
+                "ParentId": "3e2fbaec-6c4f-43c4-8fd8-c11184070d36",
+                "Name": "ООТЗ",
+                "children": []
+            },
+            {
+                "Id": "20700f46-01f9-4dcb-a5fd-6c6e3f0c3bc3",
+                "ParentId": "3e2fbaec-6c4f-43c4-8fd8-c11184070d36",
+                "Name": "ОПП",
+                "children": []
+            },
+            {
+                "Id": "08bfa726-dfff-4e5b-a132-f3531524ad2f",
+                "ParentId": "3e2fbaec-6c4f-43c4-8fd8-c11184070d36",
+                "Name": "Руководители СПП",
+                "children": []
+            },
+            {
+                "Id": "e558b9e7-0552-4f24-a792-4fa19c816168",
+                "ParentId": "3e2fbaec-6c4f-43c4-8fd8-c11184070d36",
+                "Name": "СПП ВТБ",
+                "children": []
+            },
+            {
+                "Id": "56f46221-76cc-409a-89f2-40880d37dd00",
+                "ParentId": "3e2fbaec-6c4f-43c4-8fd8-c11184070d36",
+                "Name": "СПП Екатеринбург",
+                "children": []
+            },
+            {
+                "Id": "8059c019-1e0b-408c-b117-d32297472e1e",
+                "ParentId": "3e2fbaec-6c4f-43c4-8fd8-c11184070d36",
+                "Name": "СПП Новосибирск",
+                "children": []
+            },
+            {
+                "Id": "f4352e02-f2bc-4d9f-83dd-9a9ebdc4ad7a",
+                "ParentId": "3e2fbaec-6c4f-43c4-8fd8-c11184070d36",
+                "Name": "СПП Самара",
+                "children": []
+            }
+        ]
+    },
+    {
+        "Id": "17e95582-b710-4c98-9f6f-87f850a3c5c0",
+        "ParentId": null,
+        "Name": "ЦКП ВТБ",
+        "children": [
+            {
+                "Id": "46ebee92-af48-4f2c-8018-e3f1672d6105",
+                "ParentId": "17e95582-b710-4c98-9f6f-87f850a3c5c0",
+                "Name": "ЦКП Воронеж",
+                "children": []
+            },
+            {
+                "Id": "0c96529f-17c1-4792-968f-75419f07bf9f",
+                "ParentId": "17e95582-b710-4c98-9f6f-87f850a3c5c0",
+                "Name": "ЦКП Москва",
+                "children": []
+            },
+            {
+                "Id": "55c53575-efab-4542-840a-1c73730a6784",
+                "ParentId": "17e95582-b710-4c98-9f6f-87f850a3c5c0",
+                "Name": "ЦКП Санкт-Петербург",
+                "children": []
+            },
+            {
+                "Id": "a70c3b88-c64b-4c8e-a632-fedac9ad20f6",
+                "ParentId": "17e95582-b710-4c98-9f6f-87f850a3c5c0",
+                "Name": "ЦКП Улан-Удэ",
+                "children": []
+            }
+        ]
+    }
+]

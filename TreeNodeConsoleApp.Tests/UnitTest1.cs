@@ -2,6 +2,8 @@ using ApprovalTests;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
 using AutoFixture;
+using Newtonsoft.Json;
+using TreeNodeConsoleApp.Extensions;
 
 namespace TreeNodeConsoleApp.Tests;
 
@@ -108,8 +110,27 @@ public class Tests
         }
 
         var tree = roots;
-        var res = Newtonsoft.Json.JsonConvert.SerializeObject(tree);
+        var res = JsonConvert.SerializeObject(tree);
         Approvals.VerifyJson(res);
+    }
+
+    [Test]
+    public void FixBugCs24590Tests()
+    {
+        var filePath = Path.Combine(Environment.CurrentDirectory, "Files", "cs24590.json");
+        var tree = Deserialize(filePath);
+
+        var children = tree.GetChildren().ToArray();
+
+        var newTree = Program.BuildTree(children, tree);
+        var res = JsonConvert.SerializeObject(newTree);
+        Approvals.VerifyJson(res);
+    }
+
+    private static TreeNode[] Deserialize(string fileName)
+    {
+        var text = File.ReadAllText(fileName);
+        return JsonConvert.DeserializeObject<TreeNode[]>(text);
     }
 
     private static Guid[] GenerateChildrenGuids(ref Guid startGuid, int count)
