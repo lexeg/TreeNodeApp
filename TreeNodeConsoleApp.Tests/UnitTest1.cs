@@ -71,9 +71,9 @@ public class Tests
             var departmentNamePart = $"Подразделение {i + 1}";
             var root = CreateRootTree(departmentNamePart, childrenGuids, rootGuids[i]);
             root.Children[0].Children = CreateChildrenTreeNodes($"{departmentNamePart}.1",
-                GenerateChildrenGuids(ref startGuid, 4), root.Id);
-            root.Children[1].Children = CreateChildrenTreeNodes($"{departmentNamePart}.1",
-                GenerateChildrenGuids(ref startGuid, 2), root.Id);
+                GenerateChildrenGuids(ref startGuid, 4), root.Children[0].Id);
+            root.Children[1].Children = CreateChildrenTreeNodes($"{departmentNamePart}.2",
+                GenerateChildrenGuids(ref startGuid, 2), root.Children[1].Id);
             roots.Add(root);
         }
 
