@@ -71,7 +71,7 @@ class Program
         newTree.Print();
     }
 
-    private static TreeNode[] BuildTree(TreeNode[] departments, TreeNode[] sourceTree)
+    public static TreeNode[] BuildTree(TreeNode[] departments, TreeNode[] sourceTree)
     {
         var children = new List<TreeNode>();
         foreach (var grouping in departments.GroupBy(x => x.ParentId))
@@ -99,7 +99,7 @@ class Program
                 if (findRoot != null)
                 {
                     var (node, treeChildren) = FindChildPositionInTree(findRoot, root);
-                    findRoot.Children = node.Children.Concat(treeChildren).ToArray();
+                    node.Children = node.Children.Concat(treeChildren).ToArray();
                     /*foreach (var item in treeChildren)
                     {
                         node.Children.Add(item);
