@@ -3,45 +3,45 @@
         "Id": "b2fc80d7-bdf9-4941-8290-2d7971a46bf6",
         "ParentId": null,
         "Name": "ДРВ",
-        "children": [
+        "Children": [
             {
                 "Id": "685d6228-c9c5-4d93-b5dd-510cebdec7f4",
                 "ParentId": "b2fc80d7-bdf9-4941-8290-2d7971a46bf6",
                 "Name": "ДФУ УДУ",
-                "children": [
+                "Children": [
                     {
                         "Id": "ef0aaf92-556f-431c-a543-0df6a6d5307d",
                         "ParentId": "685d6228-c9c5-4d93-b5dd-510cebdec7f4",
                         "Name": "ДФУ УДУ ЦДУ Самара",
-                        "children": [
+                        "Children": [
                             {
                                 "Id": "c966689a-72e1-4776-baf0-3b90fd855ced",
                                 "ParentId": "ef0aaf92-556f-431c-a543-0df6a6d5307d",
                                 "Name": "ГДОИР Самара",
-                                "children": []
+                                "Children": []
                             },
                             {
                                 "Id": "9afd3e98-2780-418c-a519-7315218eebd7",
                                 "ParentId": "ef0aaf92-556f-431c-a543-0df6a6d5307d",
                                 "Name": "ГСОКК Самара",
-                                "children": []
+                                "Children": []
                             },
                             {
                                 "Id": "000bfafb-016e-4725-9545-43197dd79253",
                                 "ParentId": "ef0aaf92-556f-431c-a543-0df6a6d5307d",
                                 "Name": "ОДУРА Самара",
-                                "children": [
+                                "Children": [
                                     {
                                         "Id": "64acc762-a8a0-4e6f-81f5-ac3db3af0d74",
                                         "ParentId": "000bfafb-016e-4725-9545-43197dd79253",
                                         "Name": "1 ГДУ (1-30) ОДУРА (Самара)",
-                                        "children": []
+                                        "Children": []
                                     },
                                     {
                                         "Id": "f613ed4f-7327-4fc4-8780-65813894ef7a",
                                         "ParentId": "000bfafb-016e-4725-9545-43197dd79253",
                                         "Name": "2 ГДУ (1-30) ОДУРА (Самара)",
-                                        "children": []
+                                        "Children": []
                                     }
                                 ]
                             }
