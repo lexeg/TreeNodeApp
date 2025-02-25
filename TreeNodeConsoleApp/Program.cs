@@ -49,7 +49,7 @@ class Program
         newTree.Print();
     }
 
-    private static TreeNode[] BuildTree(TreeNode[] departments, TreeNode[] sourceTree)
+    public static TreeNode[] BuildTree(TreeNode[] departments, TreeNode[] sourceTree)
     {
         var children = new List<TreeNode>();
         foreach (var grouping in departments.GroupBy(x => x.ParentId))

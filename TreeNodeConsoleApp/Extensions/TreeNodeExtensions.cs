@@ -1,4 +1,7 @@
-﻿namespace TreeNodeConsoleApp.Extensions;
+﻿using System.Runtime.CompilerServices;
+
+[assembly:InternalsVisibleTo("TreeNodeConsoleApp.Tests")]
+namespace TreeNodeConsoleApp.Extensions;
 
 internal static class TreeNodeExtensions
 {
