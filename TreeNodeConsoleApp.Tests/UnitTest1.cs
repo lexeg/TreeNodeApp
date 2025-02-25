@@ -127,6 +127,39 @@ public class Tests
         Approvals.VerifyJson(res);
     }
 
+    [Test]
+    public void LimitOffsetTests()
+    {
+        var rootGuids = new[]
+        {
+            Guid.Parse("a84ead7c-ff90-45f6-8f71-5f49c2c0167e"),
+            Guid.Parse("15f8b8f9-2c2f-4647-b90f-f9d552ecf36b"),
+            Guid.Parse("ce7263bb-8318-40b6-bacc-f0292e648da1"),
+            Guid.Parse("33b62d51-2a13-4907-bd76-7f4a7750007d")
+        };
+
+        var roots = new List<TreeNode>();
+        var startGuid = Guid.Empty;
+        for (var i = 0; i < rootGuids.Length; i++)
+        {
+            var childrenGuids = GenerateChildrenGuids(ref startGuid, 3);
+            var departmentNamePart = $"Подразделение {i + 1}";
+            var root = CreateRootTree(departmentNamePart, childrenGuids, rootGuids[i]);
+            root.Children[0].Children = CreateChildrenTreeNodes($"{departmentNamePart}.1",
+                GenerateChildrenGuids(ref startGuid, 1000), root.Children[0].Id);
+            root.Children[1].Children = CreateChildrenTreeNodes($"{departmentNamePart}.2",
+                GenerateChildrenGuids(ref startGuid, 2), root.Children[1].Id);
+            roots.Add(root);
+        }
+
+        var tree = roots.ToArray();
+        var children = tree.GetChildren(offset: 990, limit: 11).ToArray();
+        var newTree = Program.BuildTree(children, tree);
+
+        var res = JsonConvert.SerializeObject(newTree);
+        Approvals.VerifyJson(res);
+    }
+
     private static TreeNode[] Deserialize(string fileName)
     {
         var text = File.ReadAllText(fileName);
