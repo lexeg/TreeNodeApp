@@ -146,10 +146,26 @@ public class Tests
 
     private static Guid IncrementGuid(ref Guid g)
     {
-        var bytes = g.ToByteArray();
-        bytes[^1]++;
-        g = new Guid(bytes);
-        return g;
+
+        byte[] bytes = g.ToByteArray();
+        byte[] order = [15, 14, 13, 12, 11, 10, 9, 8, 6, 7, 4, 5, 0, 1, 2, 3];
+
+        for (int i = 0; i < 16; i++)
+        {
+            if (bytes[order[i]] == byte.MaxValue)
+            {
+                bytes[order[i]] = 0;
+            }
+            else
+            {
+                bytes[order[i]]++;
+                g = new Guid(bytes);
+                return g;
+            }
+        }
+
+        throw new OverflowException("Congratulations you are one in a billion billion billion billion etc...");
+
     }
 
     private static TreeNode CreateRootTree(string departmentNamePart, Guid[] childrenGuids, Guid rootGuid)
