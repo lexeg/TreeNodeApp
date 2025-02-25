@@ -128,6 +128,19 @@ public class Tests
     }
 
     [Test]
+    public void FixBugCs25487Tests()
+    {
+        var filePath = Path.Combine(Environment.CurrentDirectory, "Files", "resp-search.json");
+        var tree = Deserialize(filePath);
+
+        var children = tree.GetChildren().ToArray();
+
+        var newTree = Program.BuildTree(children, tree);
+        var res = JsonConvert.SerializeObject(newTree);
+        Approvals.VerifyJson(res);
+    }
+
+    [Test]
     public void LimitOffsetTests()
     {
         var rootGuids = new[]
