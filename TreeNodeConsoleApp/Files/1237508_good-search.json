@@ -1,0 +1,114 @@
+[
+  {
+    "id": "83e9d59c-62e8-4965-adb5-45fbc9684c36",
+    "parentId": null,
+    "name": "Департамент Клиентского Обслуживания",
+    "description": null,
+    "children": [
+      {
+        "id": "6d157e4f-e46f-41bf-a27e-0146f61e3a48",
+        "parentId": "83e9d59c-62e8-4965-adb5-45fbc9684c36",
+        "name": "Управление телефонного обслуживания и продаж",
+        "description": null,
+        "children": [
+          {
+            "id": "fb7dba94-a022-441d-811b-c218e7cac995",
+            "parentId": "6d157e4f-e46f-41bf-a27e-0146f61e3a48",
+            "name": "3000 КЦ Барнаул",
+            "description": null,
+            "children": [
+              {
+                "id": "b7c762d1-0f30-4c5a-869e-eb4445a67d36",
+                "parentId": "fb7dba94-a022-441d-811b-c218e7cac995",
+                "name": "3800 Отдел продаж ЦПиОПК Барнаул",
+                "description": null,
+                "children": [
+                  {
+                    "id": "4bcb844a-f3a4-4c2b-9d8f-a5764fd84012",
+                    "parentId": "b7c762d1-0f30-4c5a-869e-eb4445a67d36",
+                    "name": "3801 БРН ОПиОПК ГППК 1",
+                    "description": null,
+                    "children": [],
+                    "status": "Active",
+                    "operatorsCount": null,
+                    "totalOperatorsCount": null,
+                    "supervisors": null,
+                    "departmentHead": null
+                  },
+                  {
+                    "id": "d2ed9fa5-01e1-45c3-9ed3-be376a3d0170",
+                    "parentId": "b7c762d1-0f30-4c5a-869e-eb4445a67d36",
+                    "name": "3802 БРН ОПиОПК ГППК 2",
+                    "description": null,
+                    "children": [],
+                    "status": "Active",
+                    "operatorsCount": null,
+                    "totalOperatorsCount": null,
+                    "supervisors": null,
+                    "departmentHead": null
+                  },
+                  {
+                    "id": "16a1c10f-0189-4a0d-903c-1882f472a5db",
+                    "parentId": "b7c762d1-0f30-4c5a-869e-eb4445a67d36",
+                    "name": "3803 БРН ОПиОПК ГППК 3",
+                    "description": null,
+                    "children": [],
+                    "status": "Active",
+                    "operatorsCount": null,
+                    "totalOperatorsCount": null,
+                    "supervisors": null,
+                    "departmentHead": null
+                  },
+                  {
+                    "id": "4dec3857-41d9-415a-b8d4-31b631b4e5a9",
+                    "parentId": "b7c762d1-0f30-4c5a-869e-eb4445a67d36",
+                    "name": "3805 БРН ОПиОПК ГПСК 2",
+                    "description": null,
+                    "children": [],
+                    "status": "Active",
+                    "operatorsCount": null,
+                    "totalOperatorsCount": null,
+                    "supervisors": null,
+                    "departmentHead": null
+                  },
+                  {
+                    "id": "c2d0f784-62c0-49ad-801a-4bcb218fe2f5",
+                    "parentId": "b7c762d1-0f30-4c5a-869e-eb4445a67d36",
+                    "name": "3811 БРН ОПиОПК ГПСК 1",
+                    "description": null,
+                    "children": [],
+                    "status": "Active",
+                    "operatorsCount": null,
+                    "totalOperatorsCount": null,
+                    "supervisors": null,
+                    "departmentHead": null
+                  }
+                ],
+                "status": "Active",
+                "operatorsCount": null,
+                "totalOperatorsCount": null,
+                "supervisors": null,
+                "departmentHead": null
+              }
+            ],
+            "status": "Active",
+            "operatorsCount": null,
+            "totalOperatorsCount": null,
+            "supervisors": null,
+            "departmentHead": null
+          }
+        ],
+        "status": "Active",
+        "operatorsCount": null,
+        "totalOperatorsCount": null,
+        "supervisors": null,
+        "departmentHead": null
+      }
+    ],
+    "status": "Active",
+    "operatorsCount": null,
+    "totalOperatorsCount": null,
+    "supervisors": null,
+    "departmentHead": null
+  }
+]
