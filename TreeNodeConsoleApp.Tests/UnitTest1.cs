@@ -210,7 +210,7 @@ public class Tests
             }
         }
 
-        throw new OverflowException("Congratulations you are one in a billion billion billion billion etc...");
+        throw new OverflowException();
 
     }
 

@@ -26,7 +26,7 @@ internal static class DepartmentWithChildrenHelper
                 if (findRoot != null)
                 {
                     var (node, treeChildren) = FindChildPositionInTree(findRoot, root);
-                    node.Children = node.Children.Concat(treeChildren).ToArray();
+                    node.Children = node.Children.Union(treeChildren).ToArray();
                 }
                 else
                 {
