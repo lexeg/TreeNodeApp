@@ -2,9 +2,9 @@
 
 public static class TreeNodeBuilder
 {
-    public static TreeNode CreateTree()
+    public static DepartmentWithChildrenModel CreateTree()
     {
-        var root = new TreeNode { Id = Guid.NewGuid(), Name = "Подразделение 1", Children = [] };
+        var root = new DepartmentWithChildrenModel { Id = Guid.NewGuid(), Name = "Подразделение 1", Children = [] };
         var childOne = CreateChild("Подразделение 1.1", root.Id);
         var childTwo = CreateChild("Подразделение 1.2", root.Id);
         root.Children =
@@ -30,13 +30,13 @@ public static class TreeNodeBuilder
         return root;
     }
 
-    public static TreeNode[] CreateTree2()
+    public static DepartmentWithChildrenModel[] CreateTree2()
     {
         const int rootCount = 4;
-        var roots = new List<TreeNode>();
+        var roots = new List<DepartmentWithChildrenModel>();
         for (var i = 1; i <= rootCount; i++)
         {
-            var root = new TreeNode { Id = Guid.NewGuid(), Name = $"Подразделение {i}", Children = [] };
+            var root = new DepartmentWithChildrenModel { Id = Guid.NewGuid(), Name = $"Подразделение {i}", Children = [] };
             var childOne = CreateChild($"Подразделение {i}.1", root.Id);
             var childTwo = CreateChild($"Подразделение {i}.2", root.Id);
 
@@ -67,10 +67,10 @@ public static class TreeNodeBuilder
         return roots.ToArray();
     }
 
-    public static TreeNode CreateBigTree()
+    public static DepartmentWithChildrenModel CreateBigTree()
     {
         const int childrenCount = 1000;
-        var root = new TreeNode { Id = Guid.NewGuid(), Name = "Подразделение 1", Children = [] };
+        var root = new DepartmentWithChildrenModel { Id = Guid.NewGuid(), Name = "Подразделение 1", Children = [] };
         var childOne = CreateChild("Подразделение 1.1", root.Id);
         var childTwo = CreateChild("Подразделение 1.2", root.Id);
         root.Children =
@@ -80,7 +80,7 @@ public static class TreeNodeBuilder
             CreateChild("Подразделение 1.3", root.Id)
         ];
 
-        var items = new List<TreeNode>();
+        var items = new List<DepartmentWithChildrenModel>();
         for (var i = 0; i < childrenCount; i++)
         {
             items.Add(CreateChild($"Подразделение 1.1.{i + 1}", childOne.Id));
@@ -96,14 +96,14 @@ public static class TreeNodeBuilder
         return root;
     }
 
-    public static TreeNode[] CreateBigTree2()
+    public static DepartmentWithChildrenModel[] CreateBigTree2()
     {
         const int rootCount = 4;
         const int childrenCount = 1000;
-        var roots = new List<TreeNode>();
+        var roots = new List<DepartmentWithChildrenModel>();
         for (var i = 1; i <= rootCount; i++)
         {
-            var root = new TreeNode { Id = Guid.NewGuid(), Name = $"Подразделение {i}", Children = [] };
+            var root = new DepartmentWithChildrenModel { Id = Guid.NewGuid(), Name = $"Подразделение {i}", Children = [] };
             var childOne = CreateChild($"Подразделение {i}.1", root.Id);
             var childTwo = CreateChild($"Подразделение {i}.2", root.Id);
 
@@ -114,7 +114,7 @@ public static class TreeNodeBuilder
                 CreateChild($"Подразделение {i}.3", root.Id)
             ];
 
-            var items = new List<TreeNode>();
+            var items = new List<DepartmentWithChildrenModel>();
             for (var j = 0; j < childrenCount; j++)
             {
                 items.Add(CreateChild($"Подразделение {i}.1.{j + 1}", childOne.Id));
@@ -154,8 +154,8 @@ public static class TreeNodeBuilder
         return root;*/
     }
     
-    private static TreeNode CreateChild(string name, Guid rootId)
+    private static DepartmentWithChildrenModel CreateChild(string name, Guid rootId)
     {
-        return new TreeNode { Id = Guid.NewGuid(), Name = name, ParentId = rootId, Children = [] };
+        return new DepartmentWithChildrenModel { Id = Guid.NewGuid(), Name = name, ParentId = rootId, Children = [] };
     }
 }

@@ -4,9 +4,9 @@ namespace TreeNodeConsoleApp.Extensions;
 
 public static class JsonConverter
 {
-    public static TreeNode[] Deserialize(string fileName)
+    public static DepartmentWithChildrenModel[] Deserialize(string fileName)
     {
         var text = File.ReadAllText(fileName);
-        return JsonConvert.DeserializeObject<TreeNode[]>(text);
+        return JsonConvert.DeserializeObject<DepartmentWithChildrenModel[]>(text);
     }
 }

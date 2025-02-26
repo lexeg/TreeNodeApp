@@ -35,7 +35,7 @@ public class Tests
             Guid.Parse("01aa4113-a169-41ae-9076-cc324e4fe48a"),
             Guid.Parse("30985e85-f630-45f1-95ad-989150ea9c57")
         };
-        var root = new TreeNode { Id = rootGuid, Name = departmentNamePart, Children = [] };
+        var root = new DepartmentWithChildrenModel { Id = rootGuid, Name = departmentNamePart, Children = [] };
         var childOne = CreateChild(childrenGuids[0], $"{departmentNamePart}.1", root.Id);
         var childTwo = CreateChild(childrenGuids[1], $"{departmentNamePart}.2", root.Id);
         var childThree = CreateChild(childrenGuids[2], $"{departmentNamePart}.3", root.Id);
@@ -65,7 +65,7 @@ public class Tests
             Guid.Parse("33b62d51-2a13-4907-bd76-7f4a7750007d")
         };
 
-        var roots = new List<TreeNode>();
+        var roots = new List<DepartmentWithChildrenModel>();
         var startGuid = Guid.Empty;
         for (var i = 0; i < rootGuids.Length; i++)
         {
@@ -95,7 +95,7 @@ public class Tests
             Guid.Parse("33b62d51-2a13-4907-bd76-7f4a7750007d")
         };
 
-        var roots = new List<TreeNode>();
+        var roots = new List<DepartmentWithChildrenModel>();
         var startGuid = Guid.Empty;
         for (var i = 0; i < rootGuids.Length; i++)
         {
@@ -122,7 +122,7 @@ public class Tests
 
         var children = tree.GetChildren().ToArray();
 
-        var newTree = Program.BuildTree(children, tree);
+        var newTree = DepartmentWithChildrenHelper.BuildTree(children, tree);
         var res = JsonConvert.SerializeObject(newTree);
         Approvals.VerifyJson(res);
     }
@@ -135,7 +135,7 @@ public class Tests
 
         var children = tree.GetChildren().ToArray();
 
-        var newTree = Program.BuildTree(children, tree);
+        var newTree = DepartmentWithChildrenHelper.BuildTree(children, tree);
         var res = JsonConvert.SerializeObject(newTree);
         Approvals.VerifyJson(res);
     }
@@ -151,7 +151,7 @@ public class Tests
             Guid.Parse("33b62d51-2a13-4907-bd76-7f4a7750007d")
         };
 
-        var roots = new List<TreeNode>();
+        var roots = new List<DepartmentWithChildrenModel>();
         var startGuid = Guid.Empty;
         for (var i = 0; i < rootGuids.Length; i++)
         {
@@ -167,16 +167,16 @@ public class Tests
 
         var tree = roots.ToArray();
         var children = tree.GetChildren(offset: 990, limit: 11).ToArray();
-        var newTree = Program.BuildTree(children, tree);
+        var newTree = DepartmentWithChildrenHelper.BuildTree(children, tree);
 
         var res = JsonConvert.SerializeObject(newTree);
         Approvals.VerifyJson(res);
     }
 
-    private static TreeNode[] Deserialize(string fileName)
+    private static DepartmentWithChildrenModel[] Deserialize(string fileName)
     {
         var text = File.ReadAllText(fileName);
-        return JsonConvert.DeserializeObject<TreeNode[]>(text);
+        return JsonConvert.DeserializeObject<DepartmentWithChildrenModel[]>(text);
     }
 
     private static Guid[] GenerateChildrenGuids(ref Guid startGuid, int count)
@@ -214,18 +214,18 @@ public class Tests
 
     }
 
-    private static TreeNode CreateRootTree(string departmentNamePart, Guid[] childrenGuids, Guid rootGuid)
+    private static DepartmentWithChildrenModel CreateRootTree(string departmentNamePart, Guid[] childrenGuids, Guid rootGuid)
     {
-        var root = new TreeNode { Id = rootGuid, Name = departmentNamePart, Children = [] };
+        var root = new DepartmentWithChildrenModel { Id = rootGuid, Name = departmentNamePart, Children = [] };
         root.Children = childrenGuids
             .Select((_, i) => CreateChild(childrenGuids[i], $"{departmentNamePart}.{i + 1}", root.Id))
             .ToArray();
         return root;
     }
 
-    private static TreeNode[] CreateChildrenTreeNodes(string departmentNamePart, Guid[] childrenGuids, Guid parentId)
+    private static DepartmentWithChildrenModel[] CreateChildrenTreeNodes(string departmentNamePart, Guid[] childrenGuids, Guid parentId)
     {
-        var items = new List<TreeNode>();
+        var items = new List<DepartmentWithChildrenModel>();
         for (var i = 0; i < childrenGuids.Length; i++)
         {
             items.Add(CreateChild(childrenGuids[i], $"{departmentNamePart}.{i + 1}", parentId));
@@ -234,10 +234,10 @@ public class Tests
         return items.ToArray();
     }
 
-    private static TreeNode CreateChild(Guid id, string name, Guid rootId)
+    private static DepartmentWithChildrenModel CreateChild(Guid id, string name, Guid rootId)
     {
         var fixture = new Fixture();
-        var result = fixture.Build<TreeNode>()
+        var result = fixture.Build<DepartmentWithChildrenModel>()
             .With(x => x.Id, id)
             .With(x => x.Name, name)
             .With(x => x.ParentId, rootId)

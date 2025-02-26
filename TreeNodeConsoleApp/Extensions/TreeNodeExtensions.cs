@@ -6,7 +6,7 @@ namespace TreeNodeConsoleApp.Extensions;
 internal static class TreeNodeExtensions
 {
     // TODO: Переделать на Stack
-    public static void Print(this TreeNode value, int indent = 0)
+    public static void Print(this DepartmentWithChildrenModel value, int indent = 0)
     {
         Console.WriteLine($"{new string(Enumerable.Repeat(' ', indent).ToArray())}{value.Name}");
         var childIndent = indent + 2;
@@ -16,7 +16,7 @@ internal static class TreeNodeExtensions
         }
     }
 
-    public static void Print(this TreeNode[] values, int indent = 0)
+    public static void Print(this DepartmentWithChildrenModel[] values, int indent = 0)
     {
         foreach (var value in values)
         {
@@ -24,13 +24,13 @@ internal static class TreeNodeExtensions
         }
     }
 
-    public static TreeNode[] GetChildren(this TreeNode value, int? offset = null, int? limit = null)
+    public static DepartmentWithChildrenModel[] GetChildren(this DepartmentWithChildrenModel value, int? offset = null, int? limit = null)
     {
         if (value == null) return [];
         if (value.Children == null || value.Children.Length == 0) return [value];
         var visited = new HashSet<Guid>();
-        var items = new List<TreeNode>();
-        var stack = new Stack<TreeNode>();
+        var items = new List<DepartmentWithChildrenModel>();
+        var stack = new Stack<DepartmentWithChildrenModel>();
         var skip = offset ?? 0;
         stack.Push(value);
         while (stack.Count != 0)
@@ -65,10 +65,10 @@ internal static class TreeNodeExtensions
         return items.ToArray();
     }
 
-    public static TreeNode[] GetChildren(this TreeNode[] values, int? offset = null, int? limit = null)
+    public static DepartmentWithChildrenModel[] GetChildren(this DepartmentWithChildrenModel[] values, int? offset = null, int? limit = null)
     {
-        var items = new List<TreeNode>();
-        var fictiveRoot = new TreeNode
+        var items = new List<DepartmentWithChildrenModel>();
+        var fictiveRoot = new DepartmentWithChildrenModel
             { Id = Guid.Empty, Name = "Fictive root", ParentId = null, Children = values };
         items.AddRange(fictiveRoot.GetChildren(offset, limit));
         return items.ToArray();
